@@ -13,11 +13,10 @@ PHPOUT	=	output.md
 
 SRC	=	$(shell find src/$(LANG)/ -name "*.md" | sort)
 
-OPTIONS	=	--columns 1000						      \
-		-V papersize:a5
+OPTIONS	=	--columns 1000 -V papersize:a4
 
-all:		clean $(FILES)
-		@php $(CATOUT) > $(PHPOUT)
+all:		clean $(SRC)
+		@(cd src/ && php ../$(CATOUT) > ../$(PHPOUT))
 		@pandoc $(OPTIONS) $(PHPOUT) -o $(OUTPUT)
 clean:
 		@rm -f $(CATOUT) $(PHPOUT)
@@ -30,4 +29,4 @@ re:		fclean all
 $(SRC):
 	@cat $@ >> $(CATOUT)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re $(SRC)

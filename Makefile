@@ -11,7 +11,7 @@ OUTPUT	=	dabsic-$(LANG).pdf
 CATOUT	=	output.php
 PHPOUT	=	output.md
 
-SRC	=	$(shell find src/$(LANG)/ -name "*.php" | sort)
+SRC	=	$(shell find src/$(LANG)/ -name "*.php" -or -name "*.md" | sort)
 
 OPTIONS	=	--columns 1000 # -V papersize:a4
 

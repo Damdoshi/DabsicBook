@@ -1,4 +1,8 @@
 <?php require ("src/tools.php"); ?>
+<?php
+// Livre en 19 de large sur 22 de haut.
+// Spirale metallique pour la reliure.
+?>
 
 ---
 title: Dabsic
@@ -10,6 +14,8 @@ indent: true
 lang: fr-FR
 ---
 
-\pagebreak
+
+<?=$PAGE; ?>
+<?=page_break(); ?>
 
 

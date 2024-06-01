@@ -30,3 +30,5 @@ défaut de toutes les déclarations.
 
 Vous aurez certainement remarqué les phrases précédés du symbole
 "\verb!'!", il s'agit de commentaires.
+
+<?=page_break(); ?>

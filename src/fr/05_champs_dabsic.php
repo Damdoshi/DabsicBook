@@ -1211,3 +1211,4 @@ avec le même nom et de faire ce genre de chose:\\
 
 \verb!string GetName(x) = name(TheArray[x])!\\
 
+<?=page_break(); ?>

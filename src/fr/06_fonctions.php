@@ -1,5 +1,5 @@
 
-\chapter{Fonctions}
+# Fonctions
 
 Ce chapitre traite des fonctions et va donc aborder les
 structures de contrôle du Dabsic au sein d'une fonction

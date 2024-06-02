@@ -79,7 +79,7 @@ Notre ``R-Type'' fut un fiasco. ``Babel'' n'ayant pas
 été mieux, allié au fait que j'avais boudé les autres langages de
 programmation orientés objets, je me suis retrouvé au rattrapage
 de programmation orienté objet, un bien moche palmarès, qu'ironiquement,
-j'allais pouvoir faire en C++.\\
+j'allais pouvoir faire en C++.\
 
 Le rattrapage consistait à programmer un serveur POP3 et un
 serveur SMTP. Temps imparti: vendredi 19h jusqu'à dimanche 10h.
@@ -87,13 +87,13 @@ J'ai pris mon ordonnanceur réseau du ``Babel'' et
 mon format de fichier du ``R-Type'', le reste était pur
 transaction. Alors que ``Mendoza'' m'aurait terrassé si j'y
 étais allé seul, doté de mes deux outils, il n'avait été
-finalement qu'un petit projet sympa.\\
+finalement qu'un petit projet sympa.\
 
 Autour de moi, mes camarades, le plus souvent armé de Java
 (sans restriction) ou de C\# (Avec les outils SMTP/POP interdit)
 avaient échoué. Nombre d'entre eux avaient passé une ou deux
 nuits blanches. Cela m'a donné envie de continuer à faire
-évoluer ces outils.\\
+évoluer ces outils.\
 
 Il m'a fallu choisir un projet de fin d'étude et cela m'a
 donné à réflechir. Ce que je souhaitais faire, techniquement,
@@ -101,7 +101,7 @@ c'est mettre à profit mes deux travaux qu'étaient ``bpt::OIni'' et
 ``bpt::NetCom''. Devoir choisir m'a amené à me rappeller
 les raisons qui m'ont amené dans mon école: je souhaitais
 créer un studio de jeux vidéos. Je voulais distribuer des jeux
-et des moteurs, des éditeurs, ce genre de chose.\\
+et des moteurs, des éditeurs, ce genre de chose.\
 
 J'ai reparcouru quelques programmes que j'avais fait auparavent.
 Avant d'être à Epitech, j'avais programmé en PHP, en C et
@@ -110,7 +110,7 @@ un jeu d'aventure. En relisant le code source de celui-ci, je
 me rendit compte que le design du langage et les facilités
 (parfois outrancière, parfois mal considéré par les programmeurs
 de langages ``plus sérieux'') m'avaient amené à mettre en
-place une structure cohérente, dédiée mais extensible.\\
+place une structure cohérente, dédiée mais extensible.\
 
 Mon choix était finalement tout vu: je souhaitais transformer
 ``Objective INI'' en langage de programmation et le doter
@@ -119,7 +119,7 @@ un moteur pour jeux d'aventures basé dessus. Il y aurait un
 IDE graphique dans la veine de RPG Maker, avec un éditeur
 de texte en plus façon Visual Basic 6. Le langage devra
 permettre la mise en place simple par un débutant comme
-je l'étais.\\
+je l'étais.\
 
 ## Mon projet de fin d'étude
 
@@ -132,7 +132,7 @@ ayant déjà été entérré une fois. Pas de graphismes, pas
 de réseau, mais je parvenais à sauver le langage de programmation
 en faisant une promesse: il sera très vite finit et fonctionnel.
 Pour mettre toutes les chances de mon coté, je décidais de
-commencer avec 4 mois d'avance.\\
+commencer avec 4 mois d'avance.\
 
 Je m'étais tué à la tache, programmant du matin jusqu'à
 ce que la nuit soit déjà bien avancée. Au départ, lors d'un
@@ -151,7 +151,7 @@ de programmation.
 et OCaml. INI étant carrément un format crée par Microsoft, cela
 ne me plaisait guère non plus. Les autres ``\#'', ``script'', ``++''
 ou les noms de scientifiques du passé ne me tentaient guère non
-plus.\\
+plus.\
 
 Etant donné que mon langage s'inspirait
 beaucoup de Visual Basic et que BASIC était un acronyme, j'ai
@@ -159,14 +159,14 @@ souhaité disposer d'un nom qui y ressemble. D'autant que
 j'aime beaucoup les ordinateurs et le folklore informatique
 des années 70/80... J'ai renommé ``Objective INI'' en ``Dabsic''.
 Autant dire qu'au jeu de ne pas donner un nom de langage à mon langage,
-je me suis raté - mais j'aime ce que j'ai trouvé.\\
+je me suis raté - mais j'aime ce que j'ai trouvé.\
 
 BASIC signifie ``Beginner's All-purpose Symbolic Instruction Code''.
 Dabsic signifie à l'origine ``Developer's All-purpose Block-structured Instruction Code''.
 Depuis peu, je me demande si le D ne pourrait pas être celui de "DSL"
 signifiant "Domain Specific Language", étant donné sa destination première
 consistant à servir de support de configuration dynamique.
-\\
+\
 
 Rien ne s'est déroulé correctement pour Dabsic. J'ai programmé
 une trentaine de programmes de tests ainsi qu'un ``Pong'' après
@@ -176,7 +176,7 @@ de l'équipe d'évaluation, Dabsic ne pouvait pas fonctionner. Seule
 ma compagne, Lisa, s'est plongé dans Dabsic et l'a compris
 et a construit un module de GUI pour lui. Dabsic
 a été retiré du projet vers Mars suite à l'insistance et le
-ressentit qui commencait à s'installer.\\
+ressentit qui commencait à s'installer.\
 
 Lisa et moi avons alors commencé une seconde version de Dabsic
 qui règlerait les problèmes les plus évidents: le type interne unique string,
@@ -184,7 +184,7 @@ la lenteur, principalement, avec le soutien du chef du laboratoire
 des langages avancés, en Flex/Bison. Néanmoins, devant avant
 tout assurer la continuité de notre projet de fin d'étude, cela
 est resté à un état embryonnaire, d'autant que nous avions
-pas mal de difficultés avec notre nouvel outil.\\
+pas mal de difficultés avec notre nouvel outil.\
 
 Notre projet de fin d'étude s'est achevé sur un logiciel
 inutile: un pseudo IDE dont la quasi totalité des boutons étaient
@@ -192,11 +192,11 @@ mort et dans lequel il était impossible de programmer la moindre
 réaction car... il n'y avait pas de langage en arrière, juste
 des comportements prédéfinis à l'avance pour effectuer notre
 démonstration. Un échec cuisant dont la relecture des échanges
-de mails et tickets me met encore en colère aujourd'hui.\\
+de mails et tickets me met encore en colère aujourd'hui.\
 
 Dabsic était mort et enterré. Mes camarades se rejouissaient
 de la réussite de notre ``projet'' qui n'était finalement
-qu'un mock partiel de la moitié de ce qu'il aurait pu être.\\
+qu'un mock partiel de la moitié de ce qu'il aurait pu être.\
 
 \pagebreak
 
@@ -205,22 +205,22 @@ qu'un mock partiel de la moitié de ce qu'il aurait pu être.\\
 Après le projet de fin d'étude est venu le stage de fin d'étude.
 Cette fois, plus question de laisser qui que ce soit au travers
 de mon chemin: j'allais travailler pour moi et développer
-ce que j'entends.\\
+ce que j'entends.\
 
 J'ai fondé ``Hanged Bunny Studio'' sous la contrainte: j'étais
 déjà auto-entrepreneur mais mon école m'a imposé un autre format,
 sans quoi elle refuserait de considérer mon travail comme
-mon stage de fin d'étude... Mais au moins, j'avais ce que je voulais.\\
+mon stage de fin d'étude... Mais au moins, j'avais ce que je voulais.\
 
 J'ai jeté ma vieille bibliothèque ``bpt'' pour une nouvelle ``HBSL''
 et commencé une réimplémentation complète de tous ce que j'avais
-fait ces deux dernières années, mais articulé autour de Dabsic.\\
+fait ces deux dernières années, mais articulé autour de Dabsic.\
 
 Mon stage fut évidemment trop court, et étant donné que la pile
 technologique que j'avais décidé était assez importante,
 surtout pour un seul programmeur, j'ai mis en pause ce travail
 pour me consacrer à un prototype de jeu vidéo et le défendre en
-convention. Dabsic s'est mit a dormir.\\
+convention. Dabsic s'est mit a dormir.\
 
 Une autre raison est que son développement était trop complexe
 pour moi de la manière dont j'avais attaqué le sujet: je créais
@@ -229,7 +229,7 @@ un champ Dabsic était responsable (hors fonctions et opérations)
 et la moindre fonction était lourde, longue et devait prendre en
 compte trop d'éléments pour que je puisse les avoir tous en tête,
 sans parler de l'absence de support écrit... Cette troisième version
-ne verra jamais le jour.\\
+ne verra jamais le jour.\
 
 \pagebreak
 
@@ -242,25 +242,25 @@ que j'espèrais y voir - et favorisait une structure générale C à une structu
 Cette quatrième version n'est pas terminée à ce jour mais est tout de
 même employé pour différents aspects déjà fonctionnel. Les parties
 langages sont mouvantes mais il est possible de s'en servir.
-\\
+\
 
 Ensuite, ce livre. Il sert deux propos: définir une base
 sur laquelle me reposer quand j'ai besoin d'implémenter un
 aspect auquel j'ai pensé: plutôt que de me rappeller ou
-de parcourir un TODO au format fumeux et à la longueur infinie.\\
+de parcourir un TODO au format fumeux et à la longueur infinie.\
 
 Le deuxième propos est tout simplement le partage. Ce projet
 a souffert d'une forte apprehension par le passé: la distance
 et le manque de confiance de chacun envers les autres (envers
 moi, j'imagine, surtout) a mené le projet vers un arret
 brutal alors que bien qu'il fut loin d'être parfait, ce train
-tenait bien dans ses rails.\\
+tenait bien dans ses rails.\
 
 La version de Dabsic décrite dans ce livre est bien plus
 vaste que la version originale développée alors que j'étais
 étudiant. Elle est probablement bancale sur differents aspects,
 améliorable sur d'autres et peut tout à fait certainement
-être enrichie de nouveaux aspects.\\
+être enrichie de nouveaux aspects.\
 
 De même, l'implémentation est actuellement à ma seule
 charge et n'aboutira certainement pas...
@@ -271,7 +271,7 @@ un travail, diverses obligations et projets, outre celui-ci... et il faut
 que je m'en accomode. Ce livre est aussi une façon, au-delà
 du simple partage d'idée, de générer de l'intêret et peut-être,
 j'espère, de former une équipe ou une communauté pouvant
-contribuer à la création de ce langage de programmation.\\
+contribuer à la création de ce langage de programmation.\
 
 <?=$PAGE; ?>
 <?=page_break(); ?>

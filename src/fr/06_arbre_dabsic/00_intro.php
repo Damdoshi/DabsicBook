@@ -29,6 +29,8 @@ Concernant l'état des champs, voici également quelques qualificatifs utiles:
 champs sont ses descendants.
 - La **racine locale** s'écrit **[.]** et est la racine du fichier d'où viennent
 les champs.
+- L'objet contexte s'écrit **this**, **[#]** ou encore **.** lors que seul. L'objet
+contexte est le parent du champ en cours de définition.
 
 Concernant Dabsic en général, voici quelques termes:
 - Le **projet utilisateur** est le nom donné au logiciel qui exploiterait Dabsic

@@ -47,6 +47,16 @@ ChampF = &[].ChampE 'Actuellement indisponible, assuré par AddressOf probableme
 ChampG = AddressOf([].ChampE) 'Actuellement disponible, probablement temporairement
 ```
 
+Il est possible de définir des adresses invalides, menant vers des champs
+sans existence. Ces champs ne peuvent pas être lu mais peuvent tout à fait
+être écrit et créé à la volée. L'accès en lecture à une référence invalide
+passe le programme en mode erreur. Il est possible d'a la place de créer
+l'élément lu en établissant l'option **-Cignore-bad-ref**. Le mot clef
+**Exists** permet de vérifier l'existence d'un champ.
+Le mot clef **NULL** peut être utilisé pour établir la valeur d'un champ
+adresse à une adresse invalide de manière certaine. **NULL** ne peut être rendu
+valide.
+
 * class: Indique que le champ respecte la construction imposée par un autre champ. La classe en question est précisée. Une classe disposant de constructeurs, l'établissement de la valeur du champ se fait par son appel.
 
 ```dabsic

@@ -86,5 +86,4 @@ le mot clef **hard**.
 Il est également possible d'interdire l'explicitation de la force de type avec
 l'option **-Cno-explicit-type-strength**.
 
-#### Constance
 

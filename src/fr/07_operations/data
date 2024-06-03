@@ -1,0 +1,139 @@
+%\begin{tabular}{c|c}
+
+Un spécificateur spécifique aux opérations et fonctions est disponible,
+il s'agit du spécificateur ``pure''. Une opération pure indique un
+ensemble de chose:
+
+\begin{itemize}
+  \item Toutes les fonctions, opérations, champs appelées ou lus par
+    l'opération courante sont purs et éternels.
+  \item Aucune assignation n'est effectuée par l'opération en dehors
+    des variables locales (si celle-ci est une fonciton) et de la
+    valeur de retour. Les paramètres ne sont pas modifié si ce sont
+    des références.
+\end{itemize}
+
+Notez qu'une valeur constante est pure par définition.
+
+Il est possible d'utiliser le mot-clef ``record'' sur une fonction pure.
+Celui-ci demande à l'interprète de garder en mémoire les résultats déjà
+calculés de la fonction. Utilisez ce mot-clef avec parcimonie afin de
+ne pas stocker des résultats inutiles si votre fonction peut prendre
+une très large variété de paramètre: ils seront tous enregistré!
+
+Il n'est pas utile d'utiliser ``record'' si la fonction ne prend pas de
+paramètre: le résultat est stocké par nature grace au mécanisme
+d'optimisation lié à la constance.
+
+Un champ contenant une opération/fonction est constante. Ainsi, il n'est pas possible
+d'écraser une opération en la remplacant par une valeur ou une autre
+opération. Il est néanmoins possible d'utiliser l'opérateur d'assignation ``\verb!=!''
+sur une opération si celle-ci comporte un unique paramètre. L'opérande
+de droite est alors passée en paramètre à l'opération.
+
+Dernier détail: si vous souhaitez indiquer qu'une opération ne retourne rien,
+il vous suffit d'écrire void: l'interprète lancera une alerte si vous
+cherchez à récuperer une éventuelle valeur retournée.
+
+\subsection{Paramètres}
+
+La valeur d'un champ peut donc être fonction d'une opération.
+Cette opération peut prendre des paramètres, ceux-là sont définis à la suite
+du nom du champ:\
+
+\verb!int Field(int x) = x + 1!\
+
+La déclaration des variables est tout à fait similaire à la déclaration
+du contenu d'une table, à la différence qu'il est possible d'utiliser
+l'opérateur ``\verb!,!'' virgule pour chainer les déclarations.
+
+Les paramètres pouvant également être des tableaux, afin de specifier
+qu'un tableau est attendu, il est possible d'utiliser le mot-clef
+``\verb!array!'' en complément des autres mot-clefs disponibles (type,
+etc.). Ajouter des crochets à la fin du nom de la variable indique
+également qu'il s'agit d'un tableau.
+Il est de plus possible de préciser des informations à propos de
+ce tableau:
+
+\begin{itemize}
+  \item ``\verb![0-42]!'' indique une taille entre 0 et 42.
+  \item ``\verb![-50]!'' indique une taille maximale de 50.
+  \item ``\verb![84]!'' ou ``\verb![84-]!'' indique une taille minimale de 84.
+  \item ``\verb![]!'' ou une absence de crochet indique que n'importe
+    quel taille est valide. Notez que du coup, un champ n'étant
+    pas un tableau peut-être donnée et la précision ``array''
+    est purement sémantique car aucune vérification ne saurait
+    être faite.
+\end{itemize}
+
+Les paramètres pouvant également être des table, il est possible
+de specifier un type construit, cela amènera l'interprète à faire
+un test de compatibilité entre le champ envoyé et le type.
+
+Il est possible de préciser qu'un paramètre est passé par référence
+en ajoutant le symbole ``\verb!.!'' en préfixe de nom de variable.
+
+Ainsi, il est possible d'écrire:
+
+\begin{itemize}
+  \item Quelques fonctions simples:
+    \verb!void PutPixel(int pixels[], int x, int y, int w, int color) := pixels[x + w * y] = color!
+    \verb!void Factoriel(int n) := n <= 1 ? 1 : n * Factoriel(n - 1)!
+  \item Une fonction avec des paramètres par défaut:
+    \verb!pure int Mul(int x = 0, int y = 0) := x * y!
+  \item Une fonction avec des références en paramètre:
+    \verb!void Swap(int .x, int .y) := x = x ^ y, y = x ^ y, x = x ^ y!
+\end{itemize}
+
+\subsection{Tableaux}
+
+Comme vu précédemment, la déclaration d'un tableau est la suivante:\
+
+\begin{verbatim}
+Field = [Array
+  ...
+]
+\end{verbatim}
+
+Il est possible de préciser un large ensemble de règles de manière
+à renforcer l'environnement, y compris la taille du tableau:\
+
+\begin{verbatim}
+Field = [hard int Array[20]
+  1 2 3 4 5 6 42
+]
+\end{verbatim}
+
+Ici, un tableau comprenant 20 cellules est créé: celui-ci n'est
+pas redimensionnable, ses éléments sont des entiers constant.
+Les valeurs non précisées se voient assigner la dernière valeur
+renseignée, soit ici 42.\
+
+Les tableaux ne sont pas exclusivement des planches de valeur!
+Les éléments indéxés sont des champs, comme le reste, ainsi il
+est même possible d'écrire:\
+
+\begin{verbatim}
+TheArray = [Array
+  [Field
+    Data = 42
+  ]
+  [Field
+    Dance = "Jerk"
+  ]
+  [Field
+    CreditRatio = 2.1
+  ]
+]
+\end{verbatim}
+
+Nous avons créé ici un tableau contenant 3 champs indexés. Ces
+trois champs sont des tables contenant d'autres champs.
+Remarquez ici la ré-utiisation du nom ``Field'': étant
+donné que le nom n'est pas utilisé pour indexer ces noeuds,
+il est possible d'en avoir plusieurs dans le même scope
+avec le même nom et de faire ce genre de chose:\
+
+\verb!string GetName(x) = name(TheArray[x])!\
+
+<?=page_break(); ?>

@@ -14,18 +14,39 @@ Champ3 = 424
 Champ4 = 010 '8
 ```
 
+Lors d'une explicitation de type integer, il est possible de préciser une étendue
+acceptable. L'assignation d'une valeur n'étant pas dans cette amplitude lèvera
+alors une erreur. Il est possible d'utiliser des valeurs depuis les champs
+à la conditon que ces champs soient éternaux (Voir spécificateurs). Ils devraient
+certainement aussi être constants.
+
+```dabsic
+ChampZ:integer[-5, +10] = 7
+eternal Seuil=10
+ChampY:integer[Seuil - 10, Seuil + 10] = 7
+```
+
+Un comportement spécifique est reservé aux opérateurs unaires ++ et -- concernant
+les amplitudes: les seuils agiront comme limites sans lever d'erreur.
+
 * bool, boolean: Un nombre entier, pouvant prendre seulement les valeurs 0 et 1,
 associé aux mot-clefs **true** et **false**. Le stockage sous jacent est un int.
 
-* real: Un nombre flottant, positif, négatif ou nul. Les représentations acceptées pour les flottants sont la forme décimale classique et la notation scientifique. Le stockage sous jacent est un double.
+* real: Un nombre flottant, positif, négatif ou nul. Les représentations acceptées pour les flottants sont la forme décimale classique et la notation scientifique. Le stockage sous jacent est un double. Il est possible d'utiliser le suffixe % à la suite
+d'un nombre littéral pour indiquer que la valeur est un pourcentage et doit
+donc être ramené entre 0 et 1 (partant du principe qu'elle et entre 0 et 100).
 
 ```dabsic
 Champ5 = 4.7
 Champ6 = 5.
 Champ7 = .42
-Champ8 = 5.7e8
-Champ9 = 5.7e
+Champ8 = 5e8
+Champ9 = 70%
 ```
+
+De la même manière que les champs entiers, les champs réels peuvent avoir
+une étendue précisée à la création. Le comportement est identique mais les valeurs
+seuils sont des réels eux aussi.
 
 * string: Une chaine de caractères. Il s'agit au niveau du format d'une chaine de
 caractère C typique, et tous les caractères d'échappement du C sont disponible ainsi
@@ -61,6 +82,14 @@ valide.
 
 ```dabsic
 ChampH = [].TheClass("Name")
+```
+
+* enum: Indique que le champ comporte des constantes symboliques. L'énumération en
+question est précisée si elle existe déjà, sinon elle peut être déterminée à la volée.
+
+```dabsic
+ChampI:enum[BON,BRUTE,TRUAND] = TRUAND
+ChampJ:enum [].Couleur = [].Couleur.ROUGE
 ```
 
 ##### Considération sur le formatage des litteraux

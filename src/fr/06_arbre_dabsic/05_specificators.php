@@ -13,6 +13,8 @@ que des constantes n'étant jamais recalculées, le gain est remarquable. Les
 opérations intégrant peu d'éléments non constants peuvent voir leurs résultats
 placé en cache.
 
+Les fonctions sont constantes.
+
 ##### mutable - Transformabilité de la valeur
 
 Le spécificateur **mutable** indique que la valeur du champ peut être modifiée.
@@ -50,3 +52,5 @@ la combinaison de **eternal fixed const!**.
 Il est possible de respecifier à la suite de class pour casser certains de ces
 comportements, cependant, ce n'est pas recommandé. Le retrait de fixed peut servir
 à permettre la programmation par prototype.
+
+

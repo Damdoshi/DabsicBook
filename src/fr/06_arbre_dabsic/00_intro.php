@@ -20,6 +20,9 @@ d'entier, contingu et commencant à zéro)
 - Le terme **champ** (Field, en anglais) sera donc utilisé pour les champs
 n'étant ni des tableaux ni des noeuds - ou dans le cas où cette distinction
 n'aurait pas d'importance.
+- Le terme **fonction** (Function, en anglais) sera utilisé pour définir un
+champ dont la valeur est une fonction. Une fonction peut-être un tableau
+et un noeud, bien que je ne vois à l'heure actuelle de raison pour cela.
 
 Concernant l'état des champs, voici également quelques qualificatifs utiles:
 
@@ -37,3 +40,8 @@ Concernant Dabsic en général, voici quelques termes:
 comme langage de script. C'est un logiciel susceptible d'appeler les fonctions écrites
 en Dabsic, de voir ses fonctions appelées par Dabsic, de travailler sur des valeurs
 partagées avec Dabsic.
+
+Il est possible d'interdire à un champ d'être à la fois un tableau et un noeud
+avec l'option **-Cnode-array-mutual-exclusion**, ou encore d'interdire à un
+champ d'être autre chose que l'un des trois seulement avec **-Cno-cumulative-function**. Enfin, il est possible d'interdire à un champ d'être vide avec **-Cno-empty-field**.
+

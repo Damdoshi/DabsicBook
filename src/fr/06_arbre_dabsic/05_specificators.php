@@ -41,16 +41,47 @@ Rendre un champ éternel rend néccessairement éternel tous ses parents.
 L'option **-Ceternal** indique que tous les champs sont eternels. La racine globale
 est éternelle.
 
-##### class - Définition d'une classe ou d'une structure
+##### class, struct - Définition d'une classe ou d'une structure
 
-Le mot clef **class** sert à définir des classes ou structure mais il incorpore
-également un changement de comportement à la manière des spécificateurs.
+Les mot clefs **class** et **struct** servent à définir une classe ou une structure
+et incorporent également un changement de comportement à la manière des spécificateurs.
 
 Un champ **class** est éternel, fixé et l'ensemble de ses champs sont constants, soit
-la combinaison de **eternal fixed const!**.
+la combinaison de **eternal fixed const!**. En somme, il s'agit d'une définition
+définitive.
 
 Il est possible de respecifier à la suite de class pour casser certains de ces
 comportements, cependant, ce n'est pas recommandé. Le retrait de fixed peut servir
 à permettre la programmation par prototype.
 
+L'option **-Cno-class-respecification** empeche tout ajout de spécificateur
+qui viendrait casser ceux imposé par **class**.
 
+La différence entre **class** et **struct** est la manière dont les données
+peuvent être sérialisé en binaire. **struct** implique une absence de bourrage.
+
+##### safe
+
+Le mot-clef **safe** indique que la valeur portée par le champ est traitée
+pour être sûre. Ce mot clef n'indique pas en quoi cette valeur est sûre, simplement
+il assure la transmission du spécificateur et permet de rejeter une valeur
+qui ne serait pas marqué comme telle si une fonction indique néccessiter une
+valeur traitée. Les éléments marqués comme sûrs ne peuvent pas se retrouver
+dans une opération avec des éléménts sans marquage sûr.
+
+Un mot clef spécialisé permet d'effectuer la transition.
+
+##### unsafe
+
+Le mot-clef **unsafe** indique que la valeur portée par le champ n'est pas
+traitée et peut comporter des éléments insécurisé. Un champ marqué **unsafe**
+ne peut pas être utilisé dans une opération avec des éléments marqué comme
+sûr, ni être passé en paramètre si le prototype néccessite une valeur marquée comme
+sûre.
+
+L'option **-Cdefault-unsafe** permet d'indiquer que tous les champs sans spécificateur
+de sûreté sont **unsafe**.
+
+===========================
+NOTE: N'est ce pas mieux de sortir seulement un mot clef unsafe ?
+Comme ca, on évite d'avoir a mettre *safe* partout. Ou alors on permet les deux.

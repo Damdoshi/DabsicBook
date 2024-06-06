@@ -14,4 +14,3 @@ Ci-dessous les opérateurs unaires préfixants.
 | (bool), (boolean) | Conversion en booléen de l'opérande. |
 | (int), (integer) | Conversion en entier de l'opérande. |
 | (real) | Conversion en flottant de l'opérande. |
-

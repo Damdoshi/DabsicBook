@@ -20,10 +20,16 @@ alors une erreur. Il est possible d'utiliser des valeurs depuis les champs
 à la conditon que ces champs soient éternaux (Voir spécificateurs). Ils devraient
 certainement aussi être constants.
 
+Des suffixes correspondant aux préfixes des unités du système international d'unités
+peuvent également être placé immédiatement après les constantes littérales.
+Ces suffixes ne concernent que ceux n'étant pas des puissances de 10 négatives.
+Ainsi les suffixes suivants: da, h, k, M, G, T, P, E sont disponibles et
+correspondent à 10, 100, 1000, 1e6, 1e9, 1e12, 1e15 et 1e18.
+
 ```dabsic
-ChampZ:integer[-5, +10] = 7
+Champ0:integer[-5, +10] = 7
 eternal Seuil=10
-ChampY:integer[Seuil - 10, Seuil + 10] = 7
+Champ1:integer[Seuil - 10, Seuil + 10] = 7
 ```
 
 Un comportement spécifique est reservé aux opérateurs unaires ++ et -- concernant
@@ -32,21 +38,28 @@ les amplitudes: les seuils agiront comme limites sans lever d'erreur.
 * bool, boolean: Un nombre entier, pouvant prendre seulement les valeurs 0 et 1,
 associé aux mot-clefs **true** et **false**. Le stockage sous jacent est un int.
 
-* real: Un nombre flottant, positif, négatif ou nul. Les représentations acceptées pour les flottants sont la forme décimale classique et la notation scientifique. Le stockage sous jacent est un double. Il est possible d'utiliser le suffixe % à la suite
+* real: Un nombre flottant, positif, négatif ou nul. Les représentations acceptées
+pour les flottants sont la forme décimale classique et la notation scientifique.
+Le stockage sous jacent est un double. Il est possible d'utiliser le suffixe % à la suite
 d'un nombre littéral pour indiquer que la valeur est un pourcentage et doit
 donc être ramené entre 0 et 1 (partant du principe qu'elle et entre 0 et 100).
 
-```dabsic
-Champ5 = 4.7
-Champ6 = 5.
-Champ7 = .42
-Champ8 = 5e8
-Champ9 = 70%
-```
-
 De la même manière que les champs entiers, les champs réels peuvent avoir
 une étendue précisée à la création. Le comportement est identique mais les valeurs
-seuils sont des réels eux aussi.
+seuils sont des réels eux aussi. Ils disposent également des mêmes suffixes
+que les entiers, étendus aux suffixes X, Y, R et Q pour les puissances positives
+correspondantes a 1e21, 1e24, 1e27 et 1e30 ainsi que, pour les puissances négatives
+des suffixes d, c, m, µ, n, p, f, a, z, y, r, q correspondant à 0.1, 0.01, 0.001,
+1e-6, 1e-9, 1e-12, 1e-15, 1e-18, 1e-21, 1e-24, 1e-27 et 1e-30.
+
+```dabsic
+Champ0 = 4.7
+Champ1 = 5.
+Champ2 = .42
+Champ3 = 5e8
+Champ4 = 70%
+Champ5 = 5µ 'Equivalent a 5e-6
+```
 
 * string: Une chaine de caractères. Il s'agit au niveau du format d'une chaine de
 caractère C typique, et tous les caractères d'échappement du C sont disponible ainsi
@@ -60,7 +73,8 @@ ChampC = "Je sais même intégrer des symboles très bizarres \xFF."
 ChampD = "Et gérer des formats quand même assez nul. \uABCD."
 ```
 
-* address: L'adresse d'un champ Dabsic. Il s'agit d'une chaine de caractère respectant les limitations du nom des champs et établie via l'opérateur de récupération d'adresse.
+* address: L'adresse d'un champ Dabsic. Il s'agit d'une chaine de caractère respectant
+les limitations du nom des champs et établie via l'opérateur de récupération d'adresse.
 
 ```dabsic
 ChampE = "Valeur"
@@ -78,7 +92,9 @@ Le mot clef **NULL** peut être utilisé pour établir la valeur d'un champ
 adresse à une adresse invalide de manière certaine. **NULL** ne peut être rendu
 valide.
 
-* class: Indique que le champ respecte la construction imposée par un autre champ. La classe en question est précisée. Une classe disposant de constructeurs, l'établissement de la valeur du champ se fait par son appel.
+* class: Indique que le champ respecte la construction imposée par un autre champ.
+La classe en question est précisée. Une classe disposant de constructeurs, l'établissement
+de la valeur du champ se fait par son appel.
 
 ```dabsic
 ChampH = [].TheClass("Name")
@@ -108,6 +124,9 @@ aux résultats, mais pas la mise en forme des litteraux.
 Il semble évident, mais cela n'est peut etre ni utile ni suffisament bon marché,
 que des valeurs écrites en binaire ou en hexadécimal sont mieux représentés ainsi
 qu'en décimal.
+
+Cela semble encore plus utile s'il est possible d'employer les suffixes
+pour représenter les dimensions des valeurs.
 
 #### Options sur les types
 

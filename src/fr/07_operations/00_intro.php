@@ -9,6 +9,9 @@ La possibilité d'écrire des expressions n'est pas tout à fait équivalente
 au fait d'écrire des fonctions, car les fonctions ne sont pas déterminées
 dès la lecture du code source, tandis que les expressions sont résolues.
 
+L'avantage d'une expression sur une simple valeur littérale étant bien sur
+la lisibilité, la justification de la valeur d'un champ par rapport à un contexte.
+
 ```dabsic
 Coefficient = 3
 Base = 5

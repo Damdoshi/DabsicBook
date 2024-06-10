@@ -16,4 +16,6 @@ mais qui sont integrés à l'interprète, à la manière de l'opérateur sizeof 
 | IndexOf | Renvoi l'index de l'élément de tableau passé en paramètre. |
 | IsRead | Renvoi vrai si le champ passé en paramètre est en train d'être lu. |
 | IsWritten | Renvoi vrai si le champ passé en paramètre est en train d'être écrit. |
-
+| integer, int | Tentative de conversion en entier. |
+| string | Tentative de conversion en chaine de caractère. |
+| real | Tentative de conversion en flottant. |
